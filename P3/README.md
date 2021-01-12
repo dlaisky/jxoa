@@ -8,10 +8,10 @@ P3.1 is a simple test for lighthouse docking with Tekton. The process of testing
 
 * Deploy kubernetes cluster with one master and two nodes.
 * Deploy the basic components, such as helm3, local docker registry
-* Build the image of lighthouse for arm64 architecture. The reference link is as follows: https://github.com/yyunk/jenkins-x-arm-support/blob/master/doc/Build%20lighthouse-0.0.748%20on%20Arm64.md
-* Build the image of tekton for arm64 architecture. The reference link is as follows: https://github.com/yyunk/jenkins-x-arm-support/blob/master/doc/Build%20tekton-v0.15.2%20on%20Arm64.md
-* Build the image of kaniko for arm64 architecture. The reference link is as follows: https://github.com/yyunk/jenkins-x-arm-support/blob/master/doc/Build%20kaniko-v0.20.0%20on%20Arm64.md
-* Build the image of bucketrepofor arm64 architecture. The reference link is as follows: https://github.com/yyunk/jenkins-x-arm-support/blob/master/doc/Build%20bucketrepo-0.1.12%20on%20Arm64.md
+* Build the image of lighthouse for arm64 architecture. The reference link is as follows: https://github.com/dlaisky/jxoa/blob/main/doc/Build%20lighthouse-0.0.748%20on%20Arm64.md
+* Build the image of tekton for arm64 architecture. The reference link is as follows: https://github.com/dlaisky/jxoa/blob/main/doc/Build%20tekton-v0.15.2%20on%20Arm64.md
+* Build the image of kaniko for arm64 architecture. The reference link is as follows: https://github.com/dlaisky/jxoa/blob/main/doc/Build%20kaniko-v0.20.0%20on%20Arm64.md
+* Build the image of bucketrepofor arm64 architecture. The reference link is as follows: https://github.com/dlaisky/jxoa/blob/main/doc/Build%20bucketrepo-0.1.12%20on%20Arm64.md
 
 ## Operation process
 
@@ -48,7 +48,7 @@ The specific steps refer to https://github.com/jenkins-x/lighthouse/blob/master/
 
 So far, the configuration has been completed. Perform corresponding operations on the code repository to trigger the pipeline. If the pipeline can run successfully, the P3.1 is finished.
 
-The golang demo pipeline link is as follows https://github.com/jincheng-wu/JxOnArm/tree/main/P3.1%20Simple%20tekton%20CI/tekton-pipeline .
+The golang demo pipeline link is as follows https://github.com/dlaisky/jxoa/tree/main/P3/P3.1%20Simple%20tekton%20CI/tekton-pipeline .
 
 If the pipeline run successfully, the container images will be pushed to the designated docker registry. Then, we can pull it and run it to test weather the image can be used.
 
@@ -128,10 +128,10 @@ Write CI pipelines, with these, the arm images of lighthouse, tekton, knaiko, bu
 
 ### task
 
-* The lighthouse CI task is as follows: https://github.com/jincheng-wu/JxOnArm/blob/main/P3.2%20tekton%20CICD/task/lighthouse_task.yaml
-* The tekton CI task is as follows: https://github.com/jincheng-wu/JxOnArm/blob/main/P3.2%20tekton%20CICD/task/tekton_task.yaml
-* The kaniko CI task is as follows: https://github.com/jincheng-wu/JxOnArm/blob/main/P3.2%20tekton%20CICD/task/kaniko_task.yaml
-* The bucketrepo CI task is as follows: https://github.com/jincheng-wu/JxOnArm/blob/main/P3.2%20tekton%20CICD/task/bucketrepo_task.yml
+* The lighthouse CI task is as follows: https://github.com/dlaisky/jxoa/blob/main/P3/P3.2%20tekton%20CICD/task/lighthouse_task.yaml
+* The tekton CI task is as follows: https://github.com/dlaisky/jxoa/blob/main/P3/P3.2%20tekton%20CICD/task/tekton_task.yaml
+* The kaniko CI task is as follows: https://github.com/dlaisky/jxoa/blob/main/P3/P3.2%20tekton%20CICD/task/kaniko_task.yaml
+* The bucketrepo CI task is as follows: https://github.com/dlaisky/jxoa/blob/main/P3/P3.2%20tekton%20CICD/task/bucketrepo_task.yml
 
 Specifically, if the docker registry which used in kaniko container need login, you shoud mount the docker config. If not, you will have no authority to pull and push images.
 
@@ -145,11 +145,11 @@ The pipeline process as follows:
 2. Modify the values.yaml to the images built before or using pre prepared values.yaml
 3. Use helm install to deploy the components.
 
-* The lighthouse CD task is as follows: https://github.com/jincheng-wu/JxOnArm/blob/main/P3.2%20tekton%20CICD/task/lighthouse_CD_task.yaml
+* The lighthouse CD task is as follows: https://github.com/dlaisky/jxoa/blob/main/P3/P3.2%20tekton%20CICD/task/lighthouse_CD_task.yaml
 
-* The tekton CD task is as follows: https://github.com/jincheng-wu/JxOnArm/blob/main/P3.2%20tekton%20CICD/task/tekton_CD_task.yaml
+* The tekton CD task is as follows: https://github.com/dlaisky/jxoa/blob/main/P3/P3.2%20tekton%20CICD/task/tekton_CD_task.yaml
 
-* The bucketrepo CDtask is as follows: https://github.com/jincheng-wu/JxOnArm/blob/main/P3.2%20tekton%20CICD/task/bucketrepo_CD_task.yml
+* The bucketrepo CDtask is as follows: https://github.com/dlaisky/jxoa/blob/main/P3/P3.2%20tekton%20CICD/task/bucketrepo_CD_task.yml
 
 ## Test
 

@@ -179,7 +179,7 @@ Change the `values.yaml`, modify that yaml file to use the container image you b
 
 Here is an example of what I used in my arm64 server. You can refer to the following link.
 
-https://github.com/yyunk/jenkins-x-arm-support/blob/master/doc/lighthouse/myvalues.yaml
+https://github.com/dlaisky/jxoa/blob/main/doc/lighthouse/myvalues.yaml
 
 Generally, you just need to modify the parentRepository and tag.
 

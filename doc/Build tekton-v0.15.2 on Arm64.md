@@ -66,7 +66,7 @@ Golint is a linter for Go source code, golint prints out style mistakes. At the 
 
 Because some binary can be built not only by main.go, I change the main.go in Makefile to *.go. So it can build binary by all source code include in folder.
 
-Here is an example of what I changed in the Makefile. You can refer to the following link: https://github.com/yyunk/pipeline/commit/5838ed97c142f49e72f2b68cbecd4ff04acfc6fb
+Here is an example of what I changed in the Makefile. You can refer to the following link: https://github.com/dlaisky/jxoa/blob/main/doc/pipeline/Makefile
 
 ## Start the build
 
@@ -282,7 +282,7 @@ image:
 ```
 Here is an example of what I used in my arm64 server. You can refer to the following link: 
 
-https://github.com/yyunk/jenkins-x-arm-support/blob/master/doc/pipeline/myvalues.yaml
+https://github.com/dlaisky/jxoa/blob/main/doc/pipeline/myvalues.yaml
 
 Generally, you just modify the upstreamtag to the tag of the images you built before.
 
